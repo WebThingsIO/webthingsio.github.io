@@ -1,0 +1,15 @@
+h1 {
+  font-size: 40px;
+}
+
+main {
+  transform: translateY(-100px);
+}
+
+main img {
+  height: 30px;
+}
+
+main p {
+  font-size: 14px;
+}
