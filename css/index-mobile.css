@@ -3,7 +3,8 @@ h1 {
 }
 
 main {
-  transform: translateY(-110px);
+  transform: translateY(-260px);
+  min-width: 300px;
 }
 
 main img {
@@ -12,4 +13,9 @@ main img {
 
 main p {
   font-size: 14px;
+}
+
+#register {
+  margin: 30px auto;
+  width: 300px;
 }

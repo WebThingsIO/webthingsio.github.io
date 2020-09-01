@@ -10,7 +10,7 @@ body {
 main {
   position: absolute;
   top: 50%;
-  transform: translateY(-200px);
+  transform: translateY(-350px);
   width: 100%;
   margin: 0 auto;
 }
@@ -21,6 +21,48 @@ main p strong {
 
 h1 {
   font-size: 67px;
+}
+
+#register {
+  width: 522px;
+  margin: 50px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #666666;
+  border-radius: 10px;
+}
+
+#register h2 {
+  font-size: 19px;
+  font-weight: 400;
+}
+
+#register input[type=text], #register input[type=email] {
+  height: 32px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 1px 10px;
+  margin: 4px;
+}
+
+#register input[type=submit] {
+  background-color: #b6d806;
+  color: #4d4d4d;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 7px 20px;
+  margin: 10px;
+  border: none;
+}
+
+#register input[type=submit]:hover {
+  color: #333;
+}
+
+#privacy-link {
+  font-size: 13px;
+  color: #fff;
 }
 
 footer {
