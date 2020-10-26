@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #4a4a4a;
+  height: 150px;
+}
+
+header #logo {
+  height: 50px;
+  margin: 0 auto;
+  padding: 50px;
+  display: block;
+}
+
+#privacy {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding-left: 80px;
+  padding-right: 80px;
+}
