@@ -1,0 +1,108 @@
+#hero {
+  background-color: #f6faff;
+  background-image: url('/images/hero_image.png');
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  text-align: center;
+  height: 300px;
+}
+
+#hero img {
+  height: 60px;
+}
+
+#hero p {
+  padding: 0 10px;
+}
+
+#hero-body {
+  max-width: 400px;
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+#webthings-wordmark {
+  height: 100px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+h2 {
+  padding: 10px 0;
+  font-weight: normal;
+}
+
+h2 strong {
+  font-weight: 600;
+}
+
+#web-of-things-section img {
+  width: 800px;
+  display: block;
+  margin: 20px auto;
+}
+
+#webthings-section img {
+  width: 325px;
+  display: block;
+  margin: 20px auto;
+}
+
+.illustration, .description {
+  flex: 1;
+}
+
+.description {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.illustration img {
+  display: block;
+  margin: 20px auto;
+}
+
+#webthings-gateway-section {
+  display: flex;
+  flex-direction: row;
+}
+
+#webthings-gateway-section .illustration img {
+  width: 280px;
+}
+
+#webthings-framework-section {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+#webthings-framework-section .illustration img {
+  height: 250px;
+}
+
+#webthings-cloud-section {
+  display: flex;
+  flex-direction: row;
+}
+
+#webthings-cloud-section .illustration img {
+  height: 393px;
+}
+
+.light-section {
+  padding: 40px;
+  background-color: #fff;
+}
+
+.dark-section {
+  padding: 40px;
+  background-color: #e6e6e6;
+}
+
+#documentation-section {
+  text-align: center;
+}

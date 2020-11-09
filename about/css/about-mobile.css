@@ -1,0 +1,39 @@
+#hero img {
+  width: calc(100% - 80px);
+}
+
+#webthings-gateway-section, #webthings-framework-section, #webthings-cloud-section {
+  display: block;
+}
+
+#web-of-things-section .illustration,
+#webthings-section .illustration,
+#webthings-gateway-section .illustration img,
+#webthings-framework-section .illustration img,
+#webthings-cloud-section .illustration img
+ {
+  width: 100%;
+  height: auto;
+}
+
+#webthings-section .illustration {
+  max-width: 325px;
+}
+
+#webthings-gateway-section .illustration img {
+  max-width: 280px;
+}
+
+#webthings-framework-section .illustration img {
+  max-width: 355px;
+}
+
+#webthings-cloud-section .illustration img {
+  max-width: 477px;
+}
+
+#webthings-gateway-section .description,
+#webthings-framework-section .description,
+#webthings-cloud-section .description {
+  padding: 0;
+}

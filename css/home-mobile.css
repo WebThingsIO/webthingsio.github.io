@@ -1,0 +1,33 @@
+#hero img {
+  height: 40px;
+}
+
+#gateway-section {
+  width: 100%;
+}
+
+#gateway-section img {
+  width: calc(100% - 20px);
+  height: auto;
+}
+
+#framework-section {
+  clear: both;
+  width: 100%;
+}
+
+#framework-section img {
+  width: calc(100% - 20px);
+  height: auto;
+}
+
+#contributions {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contribution {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0;
+}

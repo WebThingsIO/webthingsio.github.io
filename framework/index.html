@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebThings Framework</title>
+  <link rel="canonical" href="https://webthings.io/framework">
+  <link rel="icon" href="/images/icon.svg" />
+  <link rel="stylesheet" type="text/css" href="/css/site.css" />
+  <link rel="stylesheet" type="text/css" href="css/framework.css" />
+  <link rel="stylesheet" type="text/css" href="css/prism.css" />
+  <link rel="stylesheet" media="(max-width: 959px)" href="/css/site-mobile.css" />
+  <link rel="stylesheet" media="(max-width: 959px)" href="css/framework-mobile.css" />
+  <meta name="description" content="Build your own web things" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@WebThingsIO" />
+  <meta property="og:title" content="WebThings Framework" />
+  <meta property="og:description" content="Build your own web things" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webthings.io/framework" />
+  <meta property="og:image" content="https://webthings.io/images/banner.png" />
+  <script src="/js/site.js"></script>
+  <script src="js/prism.js"></script>
+  <script src="js/tabs.js"></script>
+</head>
+
+  <body>
+
+    <header>
+      <button id="menu-button"></button>
+      <a href="/">
+        <img id="wordmark" src="/images/webthings_wordmark-light.svg" alt="WebThings" />
+      </a>
+      <nav id="main-navigation">
+        <ul id="main-navigation-list">
+          <li><a href="/about">About</a></li>
+          <li><a href="/gateway">Gateway</a></li>
+          <li><a href="/framework" class="selected">Framework</a></li>
+          <li><a href="/docs">Docs</a></li>
+          <li><a href="https://discourse.mozilla.org/c/iot">Forum</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <img id="webthings-framework-wordmark" src="images/webthings_framework_wordmark.svg" alt="WebThings Framework" />
+        <img id="things-illustration" src="images/things-horizontal.svg" alt="Things illustration" />
+      </section>
+
+      <section id="things-framework">
+        <div id="things-framework-content">
+          <section id="things-framework-intro">
+            <h1>Build Your Own Web Things</h1>
+            <p>The WebThings Framework is a collection of re-usable software components to help you build your own web things, which directly expose the <a href="https://iot.mozilla.org/wot/">Web Thing API</a>. This means they can be discovered by a Web of Things gateway or client, which can then automatically detect the device's capabilities and monitor and control it over the web.</p>
+          </section>
+          <section id="installation">
+            <h2>Installation</h2>
+            <ul id="installation-tabs" class="tabs">
+              <li><a id="installation-tab-node" class="selected" href="#installation-node" data-section="installation-node">Node.js</a></li>
+              <li><a id="installation-tab-python" href="#installation-python" data-section="installation-python">Python</a></li>
+              <li><a id="installation-tab-java" href="#installation-java" data-section="installation-java">Java</a></li>
+              <li><a id="installation-tab-rust" href="#installation-rust" data-section="installation-rust">Rust</a></li>
+              <li><a id="installation-tab-arduino" href="#installation-arduino" data-section="installation-arduino">Arduino</a></li>
+            </ul>
+            <div class="tab-sections">
+              <section class="selected" id="installation-node">
+                <pre><code class="language-bash">$ npm install webthing</code></pre>
+              </section>
+              <section id="installation-python">
+                <pre><code class="language-bash">$ pip install webthing</code></pre>
+              </section>
+              <section id="installation-java">
+                <p>
+                  Maven:
+                  <pre><code class="language-markup">&lt;dependencies&gt;
+      &lt;dependency&gt;
+          &lt;groupId&gt;org.mozilla.iot&lt;/groupId&gt;
+          &lt;artifactId&gt;webthing&lt;/artifactId&gt;
+          &lt;version&gt;0.12.0&lt;/version&gt;
+      &lt;/dependency&gt;
+    &lt;/dependencies&gt;</code></pre>
+                </p>
+                <p>
+                  Gradle:
+                  <pre><code class="language-json">dependencies {
+      runtime(
+          [group: 'org.mozilla.iot', name: 'webthing', version: '0.12.0'],
+      )
+    }</code></pre>
+                </p>
+              </section>
+              <section id="installation-rust">
+                <p>
+                  Cargo:
+                  <pre><code class="language-toml">[dependencies]
+    webthing = "0.13"</code></pre>
+                </p>
+              </section>
+              <section id="installation-arduino">
+                <dl>
+                  <dt><strong>Arduino IDE:</strong></dt>
+                  <dd>Add the <strong>webthing</strong> and <strong>ArduinoJson</strong> libraries to your project.</dd>
+                  <br>
+                  <dt><strong>PlatformIO:</strong></dt>
+                  <dd>Add the <strong>webthing-arduino</strong> and <strong>ArduinoJson</strong> libraries to your project.</dd>
+                </dl>
+              </section>
+            </div>
+          </section>
+
+          <section id="example">
+            <h2>Example</h2>
+            <ul id="example-tabs" class="tabs">
+              <li><a id="example-tab-node" class="selected" href="#example-node" data-section="example-node">Node.js</a></li>
+              <li><a id="example-tab-python" href="#example-python" data-section="example-python">Python</a></li>
+              <li><a id="example-tab-java" href="#example-java" data-section="example-java">Java</a></li>
+              <li><a id="example-tab-rust" href="#example-rust" data-section="example-rust">Rust</a></li>
+              <li><a id="example-tab-arduino" href="#example-arduino" data-section="example-arduino">Arduino</a></li>
+            </ul>
+            <div class="tab-sections">
+              <section class="selected" id="example-node">
+                <pre><code class="language-javascript">const {
+    Action,
+    Event,
+    Property,
+    SingleThing,
+    Thing,
+    Value,
+    WebThingServer,
+    } = require('webthing');
+    const uuidv4 = require('uuid/v4');
+
+    class OverheatedEvent extends Event {
+    constructor(thing, data) {
+    super(thing, 'overheated', data);
+    }
+    }
+
+    class FadeAction extends Action {
+    constructor(thing, input) {
+    super(uuidv4(), thing, 'fade', input);
+    }
+
+    performAction() {
+    return new Promise((resolve) =&gt; {
+      setTimeout(() =&gt; {
+        this.thing.setProperty('brightness', this.input.brightness);
+        this.thing.addEvent(new OverheatedEvent(this.thing, 102));
+        resolve();
+      }, this.input.duration);
+    });
+    }
+    }
+
+    function makeThing() {
+    const thing = new Thing('urn:dev:ops:my-lamp-1234',
+                          'My Lamp',
+                          ['OnOffSwitch', 'Light'],
+                          'A web connected lamp');
+
+    thing.addProperty(
+    new Property(thing,
+                 'on',
+                 new Value(true),
+                 {
+                   '@type': 'OnOffProperty',
+                   title: 'On/Off',
+                   type: 'boolean',
+                   description: 'Whether the lamp is turned on',
+                 }));
+    thing.addProperty(
+    new Property(thing,
+                 'brightness',
+                 new Value(50),
+                 {
+                   '@type': 'BrightnessProperty',
+                   title: 'Brightness',
+                   type: 'integer',
+                   description: 'The level of light from 0-100',
+                   minimum: 0,
+                   maximum: 100,
+                   unit: 'percent',
+                 }));
+
+    thing.addAvailableAction(
+    'fade',
+    {
+      title: 'Fade',
+      description: 'Fade the lamp to a given level',
+      input: {
+        type: 'object',
+        required: [
+          'brightness',
+          'duration',
+        ],
+        properties: {
+          brightness: {
+            type: 'integer',
+            minimum: 0,
+            maximum: 100,
+            unit: 'percent',
+          },
+          duration: {
+            type: 'integer',
+            minimum: 1,
+            unit: 'milliseconds',
+          },
+        },
+      },
+    },
+    FadeAction);
+
+    thing.addAvailableEvent(
+    'overheated',
+    {
+      description: 'The lamp has exceeded its safe operating temperature',
+      type: 'number',
+      unit: 'degree celsius',
+    });
+
+    return thing;
+    }
+
+    function runServer() {
+    const thing = makeThing();
+
+    // If adding more than one thing, use MultipleThings() with a name.
+    // In the single thing case, the thing's name will be broadcast.
+    const server = new WebThingServer(new SingleThing(thing), 8888);
+
+    process.on('SIGINT', () =&gt; {
+    server.stop().then(() =&gt; process.exit()).catch(() =&gt; process.exit());
+    });
+
+    server.start().catch(console.error);
+    }
+
+    runServer();</code></pre>
+              </section>
+              <section id="example-python">
+                <pre><code class="language-python">from __future__ import division
+    from webthing import (Action, Event, Property, SingleThing, Thing, Value,
+                      WebThingServer)
+    import logging
+    import time
+    import uuid
+
+
+    class OverheatedEvent(Event):
+
+    def __init__(self, thing, data):
+        Event.__init__(self, thing, 'overheated', data=data)
+
+
+    class FadeAction(Action):
+
+    def __init__(self, thing, input_):
+        Action.__init__(self, uuid.uuid4().hex, thing, 'fade', input_=input_)
+
+    def perform_action(self):
+        time.sleep(self.input['duration'] / 1000)
+        self.thing.set_property('brightness', self.input['brightness'])
+        self.thing.add_event(OverheatedEvent(self.thing, 102))
+
+
+    def make_thing():
+    thing = Thing(
+        'urn:dev:ops:my-lamp-1234',
+        'My Lamp',
+        ['OnOffSwitch', 'Light'],
+        'A web connected lamp'
+    )
+
+    thing.add_property(
+        Property(thing,
+                 'on',
+                 Value(True),
+                 metadata={
+                     '@type': 'OnOffProperty',
+                     'title': 'On/Off',
+                     'type': 'boolean',
+                     'description': 'Whether the lamp is turned on',
+                 }))
+    thing.add_property(
+        Property(thing,
+                 'brightness',
+                 Value(50),
+                 metadata={
+                     '@type': 'BrightnessProperty',
+                     'title': 'Brightness',
+                     'type': 'integer',
+                     'description': 'The level of light from 0-100',
+                     'minimum': 0,
+                     'maximum': 100,
+                     'unit': 'percent',
+                 }))
+
+    thing.add_available_action(
+        'fade',
+        {
+            'title': 'Fade',
+            'description': 'Fade the lamp to a given level',
+            'input': {
+                'type': 'object',
+                'required': [
+                    'brightness',
+                    'duration',
+                ],
+                'properties': {
+                    'brightness': {
+                        'type': 'integer',
+                        'minimum': 0,
+                        'maximum': 100,
+                        'unit': 'percent',
+                    },
+                    'duration': {
+                        'type': 'integer',
+                        'minimum': 1,
+                        'unit': 'milliseconds',
+                    },
+                },
+            },
+        },
+        FadeAction)
+
+    thing.add_available_event(
+        'overheated',
+        {
+            'description':
+            'The lamp has exceeded its safe operating temperature',
+            'type': 'number',
+            'unit': 'degree celsius',
+        })
+
+    return thing
+
+
+    def run_server():
+    thing = make_thing()
+
+    # If adding more than one thing, use MultipleThings() with a name.
+    # In the single thing case, the thing's name will be broadcast.
+    server = WebThingServer(SingleThing(thing), port=8888)
+    try:
+        logging.info('starting the server')
+        server.start()
+    except KeyboardInterrupt:
+        logging.info('stopping the server')
+        server.stop()
+        logging.info('done')
+
+
+    if __name__ == '__main__':
+    logging.basicConfig(
+        level=10,
+        format="%(asctime)s %(filename)s:%(lineno)s %(levelname)s %(message)s"
+    )
+    run_server()</code></pre>
+              </section>
+              <section id="example-java">
+                <pre><code class="language-java">package org.mozilla.iot.webthing.example;
+
+    import org.json.JSONArray;
+    import org.json.JSONObject;
+    import org.mozilla.iot.webthing.Action;
+    import org.mozilla.iot.webthing.Event;
+    import org.mozilla.iot.webthing.Property;
+    import org.mozilla.iot.webthing.Thing;
+    import org.mozilla.iot.webthing.Value;
+    import org.mozilla.iot.webthing.WebThingServer;
+    import org.mozilla.iot.webthing.errors.PropertyError;
+
+    import java.io.IOException;
+    import java.util.Arrays;
+    import java.util.UUID;
+
+    public class SingleThing {
+    public static Thing makeThing() {
+        Thing thing = new Thing("urn:dev:ops:my-lamp-1234",
+                                "My Lamp",
+                                new JSONArray(Arrays.asList("OnOffSwitch",
+                                                            "Light")),
+                                "A web connected lamp");
+
+        JSONObject onDescription = new JSONObject();
+        onDescription.put("@type", "OnOffProperty");
+        onDescription.put("title", "On/Off");
+        onDescription.put("type", "boolean");
+        onDescription.put("description", "Whether the lamp is turned on");
+        thing.addProperty(new Property(thing,
+                                       "on",
+                                       new Value(true),
+                                       onDescription));
+
+        JSONObject brightnessDescription = new JSONObject();
+        brightnessDescription.put("@type", "BrightnessProperty");
+        brightnessDescription.put("title", "Brightness");
+        brightnessDescription.put("type", "integer");
+        brightnessDescription.put("description",
+                                  "The level of light from 0-100");
+        brightnessDescription.put("minimum", 0);
+        brightnessDescription.put("maximum", 100);
+        brightnessDescription.put("unit", "percent");
+        thing.addProperty(new Property(thing,
+                                       "brightness",
+                                       new Value(50),
+                                       brightnessDescription));
+
+        JSONObject fadeMetadata = new JSONObject();
+        JSONObject fadeInput = new JSONObject();
+        JSONObject fadeProperties = new JSONObject();
+        JSONObject fadeBrightness = new JSONObject();
+        JSONObject fadeDuration = new JSONObject();
+        fadeMetadata.put("title", "Fade");
+        fadeMetadata.put("description", "Fade the lamp to a given level");
+        fadeInput.put("type", "object");
+        fadeInput.put("required",
+                      new JSONArray(Arrays.asList("brightness", "duration")));
+        fadeBrightness.put("type", "integer");
+        fadeBrightness.put("minimum", 0);
+        fadeBrightness.put("maximum", 100);
+        fadeBrightness.put("unit", "percent");
+        fadeDuration.put("type", "integer");
+        fadeDuration.put("minimum", 1);
+        fadeDuration.put("unit", "milliseconds");
+        fadeProperties.put("brightness", fadeBrightness);
+        fadeProperties.put("duration", fadeDuration);
+        fadeInput.put("properties", fadeProperties);
+        fadeMetadata.put("input", fadeInput);
+        thing.addAvailableAction("fade", fadeMetadata, FadeAction.class);
+
+        JSONObject overheatedMetadata = new JSONObject();
+        overheatedMetadata.put("description",
+                               "The lamp has exceeded its safe operating temperature");
+        overheatedMetadata.put("type", "number");
+        overheatedMetadata.put("unit", "degree celsius");
+        thing.addAvailableEvent("overheated", overheatedMetadata);
+
+        return thing;
+    }
+
+    public static void main(String[] args) {
+        Thing thing = makeThing();
+        WebThingServer server;
+
+        try {
+            // If adding more than one thing, use MultipleThings() with a name.
+            // In the single thing case, the thing's name will be broadcast.
+            server = new WebThingServer(new WebThingServer.SingleThing(thing),
+                                        8888);
+
+            Runtime.getRuntime().addShutdownHook(new Thread() {
+                public void run() {
+                    server.stop();
+                }
+            });
+
+            server.start(false);
+        } catch (IOException e) {
+            System.out.println(e);
+            System.exit(1);
+        }
+    }
+
+    public static class OverheatedEvent extends Event {
+        public OverheatedEvent(Thing thing, int data) {
+            super(thing, "overheated", data);
+        }
+    }
+
+    public static class FadeAction extends Action {
+        public FadeAction(Thing thing, JSONObject input) {
+            super(UUID.randomUUID().toString(), thing, "fade", input);
+        }
+
+        @Override
+        public void performAction() {
+            Thing thing = this.getThing();
+            JSONObject input = this.getInput();
+            try {
+                Thread.sleep(input.getInt("duration"));
+            } catch (InterruptedException e) {
+            }
+
+            try {
+                thing.setProperty("brightness", input.getInt("brightness"));
+                thing.addEvent(new OverheatedEvent(thing, 102));
+            } catch (PropertyError e) {
+            }
+        }
+    }
+    }</code></pre>
+              </section>
+              <section id="example-rust">
+                <pre><code class="language-rust">use actix_rt;
+    use serde_json::json;
+    use std::sync::{Arc, RwLock, Weak};
+    use std::{thread, time};
+    use uuid::Uuid;
+    use webthing::{
+    Action, BaseAction, BaseEvent, BaseProperty, BaseThing, Thing, ThingsType, WebThingServer,
+    };
+
+    use webthing::server::ActionGenerator;
+
+    pub struct FadeAction(BaseAction);
+
+    impl FadeAction {
+    fn new(
+        input: Option&lt;serde_json::Map&lt;String, serde_json::Value&gt;&gt;,
+        thing: Weak&lt;RwLock&lt;Box&lt;dyn Thing&gt;&gt;&gt;,
+    ) -&gt; FadeAction {
+        FadeAction(BaseAction::new(
+            Uuid::new_v4().to_string(),
+            "fade".to_owned(),
+            input,
+            thing,
+        ))
+    }
+    }
+
+    impl Action for FadeAction {
+    fn set_href_prefix(&amp;mut self, prefix: String) {
+        self.0.set_href_prefix(prefix)
+    }
+
+    fn get_id(&amp;self) -&gt; String {
+        self.0.get_id()
+    }
+
+    fn get_name(&amp;self) -&gt; String {
+        self.0.get_name()
+    }
+
+    fn get_href(&amp;self) -&gt; String {
+        self.0.get_href()
+    }
+
+    fn get_status(&amp;self) -&gt; String {
+        self.0.get_status()
+    }
+
+    fn get_time_requested(&amp;self) -&gt; String {
+        self.0.get_time_requested()
+    }
+
+    fn get_time_completed(&amp;self) -&gt; Option&lt;String&gt; {
+        self.0.get_time_completed()
+    }
+
+    fn get_input(&amp;self) -&gt; Option&lt;serde_json::Map&lt;String, serde_json::Value&gt;&gt; {
+        self.0.get_input()
+    }
+
+    fn get_thing(&amp;self) -&gt; Option&lt;Arc&lt;RwLock&lt;Box&lt;dyn Thing&gt;&gt;&gt;&gt; {
+        self.0.get_thing()
+    }
+
+    fn set_status(&amp;mut self, status: String) {
+        self.0.set_status(status)
+    }
+
+    fn start(&amp;mut self) {
+        self.0.start()
+    }
+
+    fn perform_action(&amp;mut self) {
+        let thing = self.get_thing();
+        if thing.is_none() {
+            return;
+        }
+
+        let thing = thing.unwrap();
+        let input = self.get_input().unwrap().clone();
+        let name = self.get_name();
+        let id = self.get_id();
+
+        thread::spawn(move || {
+            thread::sleep(time::Duration::from_millis(
+                input.get("duration").unwrap().as_u64().unwrap(),
+            ));
+
+            let thing = thing.clone();
+            let mut thing = thing.write().unwrap();
+            let _ = thing.set_property(
+                "brightness".to_owned(),
+                input.get("brightness").unwrap().clone(),
+            );
+            thing.add_event(Box::new(BaseEvent::new(
+                "overheated".to_owned(),
+                Some(json!(102)),
+            )));
+
+            thing.finish_action(name, id);
+        });
+    }
+
+    fn cancel(&amp;mut self) {
+        self.0.cancel()
+    }
+
+    fn finish(&amp;mut self) {
+        self.0.finish()
+    }
+    }
+
+    struct Generator;
+
+    impl ActionGenerator for Generator {
+    fn generate(
+        &amp;self,
+        thing: Weak&lt;RwLock&lt;Box&lt;dyn Thing&gt;&gt;&gt;,
+        name: String,
+        input: Option&lt;&amp;serde_json::Value&gt;,
+    ) -&gt; Option&lt;Box&lt;dyn Action&gt;&gt; {
+        let input = match input {
+            Some(v) =&gt; match v.as_object() {
+                Some(o) =&gt; Some(o.clone()),
+                None =&gt; None,
+            },
+            None =&gt; None,
+        };
+
+        let name: &amp;str = &amp;name;
+        match name {
+            "fade" =&gt; Some(Box::new(FadeAction::new(input, thing))),
+            _ =&gt; None,
+        }
+    }
+    }
+
+    fn make_thing() -&gt; Arc&lt;RwLock&lt;Box&lt;dyn Thing + 'static&gt;&gt;&gt; {
+    let mut thing = BaseThing::new(
+        "urn:dev:ops:my-lamp-1234".to_owned(),
+        "My Lamp".to_owned(),
+        Some(vec!["OnOffSwitch".to_owned(), "Light".to_owned()]),
+        Some("A web connected lamp".to_owned()),
+    );
+
+    let on_description = json!({
+        "@type": "OnOffProperty",
+        "title": "On/Off",
+        "type": "boolean",
+        "description": "Whether the lamp is turned on"
+    });
+    let on_description = on_description.as_object().unwrap().clone();
+    thing.add_property(Box::new(BaseProperty::new(
+        "on".to_owned(),
+        json!(true),
+        None,
+        Some(on_description),
+    )));
+
+    let brightness_description = json!({
+        "@type": "BrightnessProperty",
+        "title": "Brightness",
+        "type": "integer",
+        "description": "The level of light from 0-100",
+        "minimum": 0,
+        "maximum": 100,
+        "unit": "percent"
+    });
+    let brightness_description = brightness_description.as_object().unwrap().clone();
+    thing.add_property(Box::new(BaseProperty::new(
+        "brightness".to_owned(),
+        json!(50),
+        None,
+        Some(brightness_description),
+    )));
+
+    let fade_metadata = json!({
+        "title": "Fade",
+        "description": "Fade the lamp to a given level",
+        "input": {
+            "type": "object",
+            "required": [
+                "brightness",
+                "duration"
+            ],
+            "properties": {
+                "brightness": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100,
+                    "unit": "percent"
+                },
+                "duration": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "unit": "milliseconds"
+                }
+            }
+        }
+    });
+    let fade_metadata = fade_metadata.as_object().unwrap().clone();
+    thing.add_available_action("fade".to_owned(), fade_metadata);
+
+    let overheated_metadata = json!({
+        "description": "The lamp has exceeded its safe operating temperature",
+        "type": "number",
+        "unit": "degree celsius"
+    });
+    let overheated_metadata = overheated_metadata.as_object().unwrap().clone();
+    thing.add_available_event("overheated".to_owned(), overheated_metadata);
+
+    Arc::new(RwLock::new(Box::new(thing)))
+    }
+
+    #[actix_rt::main]
+    async fn main() -&gt; std::io::Result&lt;()&gt; {
+    env_logger::init();
+    let thing = make_thing();
+
+    // If adding more than one thing, use ThingsType::Multiple() with a name.
+    // In the single thing case, the thing's name will be broadcast.
+    let mut server = WebThingServer::new(
+        ThingsType::Single(thing),
+        Some(8888),
+        None,
+        None,
+        Box::new(Generator),
+        None,
+    );
+    server.start(None).await
+    }</code></pre>
+              </section>
+              <section id="example-arduino">
+                <pre><code class="language-cpp">#define LARGE_JSON_BUFFERS 1
+
+    #include &lt;Arduino.h&gt;
+    #include &lt;Thing.h&gt;
+    #include &lt;WebThingAdapter.h&gt;
+
+    #ifdef ESP32
+    #include &lt;analogWrite.h&gt;
+    #endif
+
+    const char *ssid = "......";
+    const char *password = "..........";
+
+    #if defined(LED_BUILTIN)
+    const int lampPin = LED_BUILTIN;
+    #else
+    const int lampPin = 13; // manually configure LED pin
+    #endif
+
+    ThingActionObject *action_generator(DynamicJsonDocument *);
+
+    WebThingAdapter *adapter;
+
+    const char *lampTypes[] = {"OnOffSwitch", "Light", nullptr};
+    ThingDevice lamp("urn:dev:ops:my-lamp-1234", "My Lamp", lampTypes);
+
+    ThingProperty lampOn("on", "Whether the lamp is turned on", BOOLEAN,
+                     "OnOffProperty");
+    ThingProperty lampLevel("brightness", "The level of light from 0-100", INTEGER,
+                        "BrightnessProperty");
+
+    StaticJsonDocument&lt;256&gt; fadeInput;
+    JsonObject fadeInputObj = fadeInput.to&lt;JsonObject&gt;();
+    ThingAction fade("fade", "Fade", "Fade the lamp to a given level",
+                 "FadeAction", &amp;fadeInputObj, action_generator);
+    ThingEvent overheated("overheated",
+                      "The lamp has exceeded its safe operating temperature",
+                      NUMBER, "OverheatedEvent");
+
+    bool lastOn = true;
+
+    void setup(void) {
+    pinMode(lampPin, OUTPUT);
+    digitalWrite(lampPin, HIGH);
+    Serial.begin(115200);
+    Serial.println("");
+    Serial.print("Connecting to \"");
+    Serial.print(ssid);
+    Serial.println("\"");
+    #if defined(ESP8266) || defined(ESP32)
+    WiFi.mode(WIFI_STA);
+    #endif
+    WiFi.begin(ssid, password);
+    Serial.println("");
+
+    // Wait for connection
+    while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+    }
+
+    Serial.println("");
+    Serial.print("Connected to ");
+    Serial.println(ssid);
+    Serial.print("IP address: ");
+    Serial.println(WiFi.localIP());
+    adapter = new WebThingAdapter("led-lamp", WiFi.localIP());
+
+    lamp.description = "A web connected lamp";
+
+    lampOn.title = "On/Off";
+    lamp.addProperty(&amp;lampOn);
+
+    lampLevel.title = "Brightness";
+    lampLevel.minimum = 0;
+    lampLevel.maximum = 100;
+    lampLevel.unit = "percent";
+    lamp.addProperty(&amp;lampLevel);
+
+    fadeInputObj["type"] = "object";
+    JsonObject fadeInputProperties =
+      fadeInputObj.createNestedObject("properties");
+    JsonObject brightnessInput =
+      fadeInputProperties.createNestedObject("brightness");
+    brightnessInput["type"] = "integer";
+    brightnessInput["minimum"] = 0;
+    brightnessInput["maximum"] = 100;
+    brightnessInput["unit"] = "percent";
+    JsonObject durationInput =
+      fadeInputProperties.createNestedObject("duration");
+    durationInput["type"] = "integer";
+    durationInput["minimum"] = 1;
+    durationInput["unit"] = "milliseconds";
+    lamp.addAction(&amp;fade);
+
+    overheated.unit = "degree celsius";
+    lamp.addEvent(&amp;overheated);
+
+    adapter-&gt;addDevice(&amp;lamp);
+    adapter-&gt;begin();
+
+    Serial.println("HTTP server started");
+    Serial.print("http://");
+    Serial.print(WiFi.localIP());
+    Serial.print("/things/");
+    Serial.println(lamp.id);
+
+    #ifdef analogWriteRange
+    analogWriteRange(255);
+    #endif
+
+    // set initial values
+    ThingPropertyValue initialOn = {.boolean = true};
+    lampOn.setValue(initialOn);
+    (void)lampOn.changedValueOrNull();
+
+    ThingPropertyValue initialLevel = {.integer = 50};
+    lampLevel.setValue(initialLevel);
+    (void)lampLevel.changedValueOrNull();
+
+    analogWrite(lampPin, 128);
+
+    randomSeed(analogRead(0));
+    }
+
+    void loop(void) {
+    adapter-&gt;update();
+    bool on = lampOn.getValue().boolean;
+    if (on) {
+    int level = map(lampLevel.getValue().number, 0, 100, 255, 0);
+    analogWrite(lampPin, level);
+    } else {
+    analogWrite(lampPin, 255);
+    }
+
+    if (lastOn != on) {
+    lastOn = on;
+    }
+    }
+
+    void do_fade(const JsonVariant &amp;input) {
+    JsonObject inputObj = input.as&lt;JsonObject&gt;();
+    long long int duration = inputObj["duration"];
+    long long int brightness = inputObj["brightness"];
+
+    delay(duration);
+
+    ThingDataValue value = {.integer = brightness};
+    lampLevel.setValue(value);
+    int level = map(brightness, 0, 100, 255, 0);
+    analogWrite(lampPin, level);
+
+    ThingDataValue val;
+    val.number = 102;
+    ThingEventObject *ev = new ThingEventObject("overheated", NUMBER, val);
+    lamp.queueEventObject(ev);
+    }
+
+    ThingActionObject *action_generator(DynamicJsonDocument *input) {
+    return new ThingActionObject("fade", input, do_fade, nullptr);
+    }</code></pre>
+              </section>
+            </div>
+            <a id="learn-more-button" href="/docs" class="button">
+              Learn More
+            </a>
+          </section>
+
+          <section id="libraries">
+            <h2>WebThings Libraries</h2>
+            <div class="library">
+              <a href="https://github.com/WebThingsIO/webthing-node">
+                <img alt="GitHub logo" src="images/webthings_icon-round.svg" />
+                Node.js
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/WebThingsIO/webthing-python">
+                <img alt="GitHub logo" src="images/webthings_icon-round.svg" />
+                Python
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/WebThingsIO/webthing-java">
+                <img alt="GitHub logo" src="images/webthings_icon-round.svg" />
+                Java
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/WebThingsIO/webthing-rust">
+                <img alt="GitHub logo" src="images/webthings_icon-round.svg" />
+                Rust
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/WebThingsIO/webthing-arduino">
+                <img alt="GitHub logo" src="images/webthings_icon-round.svg" />
+                Arduino
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/WebThingsIO/webthing-upy">
+                <img alt="GitHub logo" src="images/webthings_icon-round.svg" />
+                MicroPython
+              </a>
+            </div>
+          </section>
+
+          <section id="libraries-3p">
+            <h2>Third Party Libraries</h2>
+            <div class="library">
+              <a href="https://github.com/Moddable-OpenSource/moddable/blob/public/documentation/network/webthings.md">
+                <img alt="Moddable logo" src="images/moddable.jpg" />
+                Moddable
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://developer.atmosphereiot.com/documents/guides/gettingstartedwebthings.html">
+                <img alt="Atmosphere IoT logo" src="images/atmosphere_iot.svg" />
+                Atmosphere IoT
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/rzr/webthing-iotjs">
+                <img alt="GitHub logo" src="images/github.png" />
+                IoT.js<br /><span class="author">by rzr</span>
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/lillo42/webthing-csharp">
+                <img alt="GitHub logo" src="images/github.png" />
+                C#<br /><span class="author">by lillo42</span>
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/rzr/webthing-go">
+                <img alt="GitHub logo" src="images/github.png" />
+                Go<br /><span class="author">by rzr</span>
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/dravenk/webthing-go">
+                <img alt="GitHub logo" src="images/github.png" />
+                Go<br /><span class="author">by dravenk</span>
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/akshayvernekar/esp-webthing">
+                <img alt="GitHub logo" src="images/github.png" />
+                ESP-IDF<br /><span class="author">by akshayvernekar</span>
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/maliknaik16/webthing-php">
+                <img alt="GitHub logo" src="images/github.png" />
+                PHP<br /><span class="author">by maliknaik16</span>
+              </a>
+            </div>
+            <div class="library">
+              <a href="https://github.com/hidaris/aiowebthing">
+                <img alt="GitHub logo" src="images/github.png" />
+                Python<br /><span class="author">by hidaris</span>
+              </a>
+            </div>
+          </section>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="/">
+        <img id="footer-wordmark" src="/images/webthings_wordmark-light.svg" />
+      </a>
+      <nav id="footer-navigation">
+        <ul id="footer-navigation-list">
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="mailto:team@webthings.io">Contact</a></li>
+        </ul>
+      </nav>
+      <nav id="social">
+        <a id="twitter-icon" href="https://twitter.com/WebThingsIO"></a>
+        <a id="github-icon" href="https://github.com/WebThingsIO"></a>
+      </nav>
+      <p id="smallprint">WebThings is sponsored by <a href="https://krellian.com">Krellian Ltd.</a> and is no longer affiliated with the <a href="https://mozilla.com">Mozilla Corporation</a>.</p>
+    </footer>
+
+  </body>
+
+</html>

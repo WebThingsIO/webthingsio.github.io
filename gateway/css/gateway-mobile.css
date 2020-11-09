@@ -1,0 +1,45 @@
+#webthings-gateway-wordmark {
+  width: calc(100% - 40px);
+  max-width: 360px;
+  margin: 40px 20px 20px 20px;
+}
+
+.carousel-section.selected {
+  display: block;
+}
+
+.carousel-screenshot {
+  display: block;
+  padding-bottom: 0;
+}
+
+.carousel-screenshot-image {
+  width: 100%;
+  margin: 0;
+}
+
+.carousel-description {
+  display: block;
+  padding-bottom: 0;
+}
+
+.carousel-description-wrapper {
+  top: 0;
+  transform: none;
+}
+
+#download-grid {
+  grid-template-columns: none;
+  width: calc(100% - 40px);
+}
+
+.download-box {
+  clear: both;
+  width: 100%;
+}
+
+.download-box img {
+  width: calc(100% - 20px);
+  max-width: 128px;
+  height: auto;
+}
