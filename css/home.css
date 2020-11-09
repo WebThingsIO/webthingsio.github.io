@@ -1,0 +1,136 @@
+#hero {
+  background-color: #f6faff;
+  background-image: url('../images/hero_image.png');
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  text-align: center;
+  height: 400px;
+}
+
+#hero img {
+  height: 60px;
+}
+
+#hero p {
+  padding: 0 10px;
+}
+
+#hero-body {
+  max-width: 400px;
+  padding: 100px 0;
+  margin: 0 auto;
+}
+
+#webthings-wordmark {
+  height: 100px;
+}
+
+#gateway-section {
+  width: 50%;
+  box-sizing: border-box;
+  background-color: #fff;
+  float: left;
+  text-align: center;
+}
+
+#gateway-section h2 {
+  font-weight: normal;
+  display: inline-block;
+}
+
+#gateway-section h2 strong {
+  font-weight: 600;
+}
+
+#gateway-section img {
+  display: block;
+  height: 245px;
+  margin: 20px auto;
+}
+
+#framework-section {
+  width: 50%;
+  box-sizing: border-box;
+  background-color: #4a4a4f;
+  float: left;
+  text-align: center;
+  color: #fff;
+}
+
+#framework-section h2 {
+  font-weight: normal;
+  display: inline-block;
+}
+
+#framework-section h2 strong {
+  font-weight: 600;
+}
+
+#framework-section img {
+  display: block;
+  height: 245px;
+  margin: 20px auto;
+}
+
+#get-involved-section {
+  clear: both;
+  background-color: #5d9bc7;
+  text-align: center;
+  color: #fff;
+}
+
+#get-involved-button {
+  clear: both;
+  display: block;
+  width: 150px;
+  margin: 20px auto;
+}
+
+#contributions {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.contribution {
+  width: 300px;
+  float: left;
+  margin: 10px;
+}
+
+.contribution img {
+  width: 192px;
+  margin: 10px;
+}
+
+#get-involved-section .button {
+  clear: both;
+}
+
+#newsletter {
+  background-color: #e6e6e6;
+}
+
+#signup-form {
+  text-align: center;
+  padding: 10px 10px;
+}
+
+#signup-form input[type=text], #signup-form input[type=email] {
+  height: 32px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 1px 10px;
+  margin: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+
+#signup-form input[type=submit] {
+  margin-bottom: 5px;
+}
+
+#privacy-link {
+  font-size: 13px;
+  color: #666;
+}

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>WebThings Gateway</title>
+  <link rel="canonical" href="https://webthings.io/gateway">
+  <link rel="icon" href="/images/icon.svg" />
+  <link rel="stylesheet" type="text/css" href="/css/site.css" />
+  <link rel="stylesheet" type="text/css" href="css/gateway.css" />
+  <link rel="stylesheet" media="(max-width: 959px)" href="/css/site-mobile.css" />
+  <link rel="stylesheet" media="(max-width: 959px)" href="css/gateway-mobile.css" />
+  <meta name="description" content="Build your own Web of Things gateway" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@WebThingsIO" />
+  <meta property="og:title" content="WebThings Gateway" />
+  <meta property="og:description" content="Build your own Web of Things gateway" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webthings.io/gateway" />
+  <meta property="og:image" content="https://webthings.io/images/banner.png" />
+  <script src="/js/site.js"></script>
+  <script src="js/carousel.js"></script>
+</head>
+
+  <body>
+
+    <header>
+      <button id="menu-button"></button>
+      <a href="/">
+        <img id="wordmark" src="/images/webthings_wordmark-light.svg" alt="WebThings" />
+      </a>
+      <nav id="main-navigation">
+        <ul id="main-navigation-list">
+          <li><a href="/about">About</a></li>
+          <li><a href="/gateway" class="selected">Gateway</a></li>
+          <li><a href="/framework">Framework</a></li>
+          <li><a href="/docs">Docs</a></li>
+          <li><a href="https://discourse.mozilla.org/c/iot">Forum</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="intro">
+        <img id="webthings-gateway-wordmark" src="images/webthings_gateway_wordmark.svg" alt="WebThings Gateway" />
+        <div id="carousel">
+          <section id="carousel-section1" class="selected carousel-section">
+            <div class="carousel-screenshot">
+              <img class="carousel-screenshot-image" src="images/things_ui_screenshot.png" alt="Things UI Screenshot" />
+            </div>
+            <div class="carousel-description">
+              <div class="carousel-description-wrapper">
+                <h3 class="carousel-heading">Things UI</h3>
+                <p class="carousel-paragraph">Monitor and control all your smart home devices via a unified web interface.</p>
+              </div>
+            </div>
+          </section>
+          <section id="carousel-section2" class="carousel-section">
+            <div class="carousel-screenshot">
+              <img class="carousel-screenshot-image" src="images/rules_engine_screenshot.png" alt="Rules Engine Screenshot" />
+            </div>
+            <div class="carousel-description">
+              <div class="carousel-description-wrapper">
+                <h3 class="carousel-heading">Rules Engine</h3>
+                <p class="carousel-paragraph">Create "if this then that" style rules to automate your home with a simple drag and drop interface.</p>
+              </div>
+            </div>
+          </section>
+          <section id="carousel-section3" class="carousel-section">
+            <div class="carousel-screenshot">
+              <img class="carousel-screenshot-image" src="images/floorplan_screenshot.png" alt="Floorplan Screenshot" />
+            </div>
+            <div class="carousel-description">
+              <div class="carousel-description-wrapper">
+                <h3 class="carousel-heading">Floorplan</h3>
+                <p class="carousel-paragraph">Lay out all your devices on an interactive floorplan of your home for at-a-glance status and control.</p>
+              </div>
+            </div>
+          </section>
+          <section id="carousel-section4" class="carousel-section">
+            <div class="carousel-screenshot">
+              <img class="carousel-screenshot-image" src="images/addons_screenshot.png" alt="Add-ons Screenshot" />
+            </div>
+            <div class="carousel-description">
+              <div class="carousel-description-wrapper">
+                <h3 class="carousel-heading">Add-ons</h3>
+                <p class="carousel-paragraph">Add compatibility with more devices and protocols with adapter add-ons.</p>
+              </div>
+            </div>
+          </section>
+          <ul id="carousel-tabs">
+            <li><a id="carousel-tab1" href="#carousel-section1" data-section="carousel-section1" class="selected"></a></li>
+            <li><a id="carousel-tab2" href="#carousel-section2" data-section="carousel-section2"></a></li>
+            <li><a id="carousel-tab3" href="#carousel-section3" data-section="carousel-section3"></a></li>
+            <li><a id="carousel-tab4" href="#carousel-section4" data-section="carousel-section4"></a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="instructions">
+        <h1>Build Your Own WebThings Gateway</h1>
+
+        <div id="download-grid">
+          <section id="pi-download" class="download-box">
+            <h2><strong>WebThings</strong> Gateway</h2>
+            <p>for Raspberry Pi</p>
+            <img id="raspberry-pi-image" src="images/raspberry_pi.svg" alt="Raspberry Pi"/>
+            <a href="https://github.com/WebThingsIO/gateway/releases/download/0.12.0/gateway-0.12.0.img.zip" class="button">
+              Download 0.12
+            </a><br />
+            <a href="https://iot.mozilla.org/docs/gateway-getting-started-guide.html">Getting Started Guide</a>
+          </section>
+
+          <section id="docker-download" class="download-box">
+            <h2><strong>WebThings</strong> Gateway</h2>
+            <p>for Docker</p>
+            <img src="images/docker.svg" alt="Docker"/>
+            <a href="https://hub.docker.com/r/mozillaiot/gateway" class="button">
+              Download 0.12
+            </a>
+          </section>
+
+          <section id="linux-download" class="download-box">
+            <h2><strong>WebThings</strong> Gateway</h2>
+            <p>for Linux</p>
+            <img src="images/linux.svg" alt="Linux"/>
+            <a href="https://github.com/WebThingsIO/gateway/releases/tag/0.12.0" class="button">
+              Download 0.12
+            </a>
+          </section>
+
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a href="/">
+        <img id="footer-wordmark" src="/images/webthings_wordmark-light.svg" />
+      </a>
+      <nav id="footer-navigation">
+        <ul id="footer-navigation-list">
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="mailto:team@webthings.io">Contact</a></li>
+        </ul>
+      </nav>
+      <nav id="social">
+        <a id="twitter-icon" href="https://twitter.com/WebThingsIO"></a>
+        <a id="github-icon" href="https://github.com/WebThingsIO"></a>
+      </nav>
+      <p id="smallprint">WebThings is sponsored by <a href="https://krellian.com">Krellian Ltd.</a> and is no longer affiliated with the <a href="https://mozilla.com">Mozilla Corporation</a>.</p>
+    </footer>
+
+  </body>
+
+</html>

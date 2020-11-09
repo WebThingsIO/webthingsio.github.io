@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About WebThings</title>
+  <link rel="canonical" href="https://webthings.io/about">
+  <link rel="icon" href="/images/icon.svg" />
+  <link rel="stylesheet" type="text/css" href="/css/site.css" />
+  <link rel="stylesheet" media="(max-width: 959px)" href="/css/site-mobile.css" />
+  <link rel="stylesheet" type="text/css" href="css/about.css" />
+  <link rel="stylesheet" media="(max-width: 959px)" href="/css/about-mobile.css" />
+  <link rel="stylesheet" media="(max-width: 959px)" href="css/about-mobile.css" />
+  <meta name="description" content="Building the Web of Things" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@WebThingsIO" />
+  <meta property="og:title" content="WebThings" />
+  <meta property="og:description" content="Building the Web of Things" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://webthings.io/about" />
+  <meta property="og:image" content="https://webthings.io/images/banner.png" />
+  <script src="/js/site.js"></script>
+</head>
+
+  <body>
+
+    <header>
+      <button id="menu-button"></button>
+      <a href="/">
+        <img id="wordmark" src="/images/webthings_wordmark-light.svg" alt="WebThings" />
+      </a>
+      <nav id="main-navigation">
+        <ul id="main-navigation-list">
+          <li><a href="/about" class="selected">About</a></li>
+          <li><a href="/gateway">Gateway</a></li>
+          <li><a href="/framework">Framework</a></li>
+          <li><a href="/docs">Docs</a></li>
+          <li><a href="https://discourse.mozilla.org/c/iot">Forum</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div id="hero-body">
+          <img src="/images/webthings_wordmark-dark.svg" alt="WebThings" />
+          <p>An open platform for monitoring and controlling devices over the web</p>
+        </div>
+      </section>
+
+      <section id="web-of-things-section" class="light-section">
+        <h1>The Web of Things</h1>
+        <p>The <a href="https://www.w3.org/WoT/">Web of Things</a> (WoT) connects physical objects to the World Wide Web.</p>
+        <p>The purpose of the Web of Things is to create a decentralised <a href="https://en.wikipedia.org/wiki/Internet_of_things">Internet of Things</a> (IoT) by giving connected devices URLs on the web to make them linkable and discoverable, and defining a standard <a href="https://www.w3.org/TR/wot-thing-description/">data model</a> and <a href="https://www.w3.org/community/web-thing-protocol/">protocol</a> to make them interoperable.</p>
+        <p>The Web of Things is intended as a unifying application layer for the Internet of Things, linking together multiple underlying IoT protocols using existing web technologies.</p>
+        <img class="illustration" src="images/web_of_things_block_diagram.png" alt="Horizontal application layer on top of existing IoT technologies"/>
+        <p>The Web of Things is currently undergoing standardisation at the <a href="https://www.w3.org/WoT/">W3C</a>, via the <a href="https://www.w3.org/WoT/WG/">Web of Things Working Group</a> and <a href="https://www.w3.org/community/web-thing-protocol/">Web Thing Protocol Community Group</a>.</p>
+      </section>
+
+      <section id="webthings-section" class="dark-section">
+        <h1>WebThings</h1>
+        <p>WebThings is an open source implementation of the Web of Things, including the WebThings Gateway, WebThings Framework and WebThings Cloud.</p>
+        <img src="images/webthings_block_diagram.png" class="illustration" alt="Illustration of things created with the WebThings Framework, connected to WebThings Cloud via WebThings Gateway. "/>
+      </section>
+
+      <section id="webthings-gateway-section" class="light-section">
+        <div class="description">
+          <h2><strong>WebThings</strong> Gateway</h2>
+          <p><a href="/gateway/">WebThings Gateway</a> is a software distribution for smart home gateways which enables users to directly monitor and control their smart home over the web, without a middleman.</p>
+          <p>It provides a web-based user interface to monitor and control smart home devices, a rules engine to automate them and an add-ons system to extend the gateway with support for a wide range of existing smart home devices.</p>
+        </div>
+        <div class="illustration">
+          <img src="images/gateway.png" alt="A home gateway device." />
+        </div>
+      </section>
+
+      <section id="webthings-framework-section" class="dark-section">
+        <div class="description">
+          <h2><strong>WebThings</strong> Framework</h2>
+          <p><a href="/framework/">WebThings Framework</a> is a collection of re-usable software components to help developers build their own web things which directly expose the Web Thing Protocol.</p>
+          <p>It includes libraries in a range of programming languages including Node.js, Python, Java, Rust and C++ (for Arduino).</p>
+        </div>
+        <div class="illustration">
+          <img src="images/framework.png" alt="A collection of connected devices." />
+        </div>
+      </section>
+
+      <section id="webthings-cloud-section" class="light-section">
+        <div class="description">
+          <h2><strong>WebThings</strong> Cloud</h2>
+          <p>WebThings Cloud is a collection of cloud services for remotely managing web things over the internet.</p>
+          <p>WebThings Cloud provides a remote access service which can create an end-to-end encrypted tunnel between a WoT gateway (or device) and a WoT client so that it can be securely accessed over the internet.</p>
+        </div>
+        <div class="illustration">
+          <img src="images/cloud.png" alt="Illustration of a secure tunnel from a smart home to a user's smartphone via the cloud." />
+        </div>
+      </section>
+
+      <section id="documentation-section" class="dark-section">
+          <p>You can learn more about WebThings in our <a href="/docs/">online documentation</a>.</p>
+      </section>
+    </main>
+
+    <footer>
+      <a href="/">
+        <img id="footer-wordmark" src="/images/webthings_wordmark-light.svg" />
+      </a>
+      <nav id="footer-navigation">
+        <ul id="footer-navigation-list">
+          <li><a href="/privacy">Privacy</a></li>
+          <li><a href="mailto:team@webthings.io">Contact</a></li>
+        </ul>
+      </nav>
+      <nav id="social">
+        <a id="twitter-icon" href="https://twitter.com/WebThingsIO"></a>
+        <a id="github-icon" href="https://github.com/WebThingsIO"></a>
+      </nav>
+      <p id="smallprint">WebThings is sponsored by <a href="https://krellian.com">Krellian Ltd.</a> and is no longer affiliated with the <a href="https://mozilla.com">Mozilla Corporation</a>.</p>
+    </footer>
+
+  </body>
+
+</html>
