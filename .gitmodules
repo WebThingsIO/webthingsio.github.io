@@ -1,0 +1,9 @@
+[submodule "schemas"]
+	path = schemas
+	url = https://github.com/WebThingsIO/schemas.git
+[submodule "docs"]
+	path = docs
+	url = https://github.com/WebThingsIO/docs.git
+[submodule "api"]
+	path = api
+	url = https://github.com/WebThingsIO/wot.git
