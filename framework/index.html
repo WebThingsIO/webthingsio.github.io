@@ -75,9 +75,9 @@
                   Maven:
                   <pre><code class="language-markup">&lt;dependencies&gt;
       &lt;dependency&gt;
-          &lt;groupId&gt;org.mozilla.iot&lt;/groupId&gt;
+          &lt;groupId&gt;io.webthings&lt;/groupId&gt;
           &lt;artifactId&gt;webthing&lt;/artifactId&gt;
-          &lt;version&gt;0.12.0&lt;/version&gt;
+          &lt;version&gt;0.13.0&lt;/version&gt;
       &lt;/dependency&gt;
     &lt;/dependencies&gt;</code></pre>
                 </p>
@@ -85,7 +85,7 @@
                   Gradle:
                   <pre><code class="language-json">dependencies {
       runtime(
-          [group: 'org.mozilla.iot', name: 'webthing', version: '0.12.0'],
+          [group: 'io.webthings', name: 'webthing', version: '0.13.0'],
       )
     }</code></pre>
                 </p>
@@ -359,23 +359,23 @@
     run_server()</code></pre>
               </section>
               <section id="example-java">
-                <pre><code class="language-java">package org.mozilla.iot.webthing.example;
+                <pre><code class="language-java">package io.webthings.webthing.example;
 
-    import org.json.JSONArray;
-    import org.json.JSONObject;
-    import org.mozilla.iot.webthing.Action;
-    import org.mozilla.iot.webthing.Event;
-    import org.mozilla.iot.webthing.Property;
-    import org.mozilla.iot.webthing.Thing;
-    import org.mozilla.iot.webthing.Value;
-    import org.mozilla.iot.webthing.WebThingServer;
-    import org.mozilla.iot.webthing.errors.PropertyError;
+import org.json.JSONArray;
+import org.json.JSONObject;
+import io.webthings.webthing.Action;
+import io.webthings.webthing.Event;
+import io.webthings.webthing.Property;
+import io.webthings.webthing.Thing;
+import io.webthings.webthing.Value;
+import io.webthings.webthing.WebThingServer;
+import io.webthings.webthing.errors.PropertyError;
 
-    import java.io.IOException;
-    import java.util.Arrays;
-    import java.util.UUID;
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.UUID;
 
-    public class SingleThing {
+public class SingleThing {
     public static Thing makeThing() {
         Thing thing = new Thing("urn:dev:ops:my-lamp-1234",
                                 "My Lamp",
@@ -490,7 +490,7 @@
             }
         }
     }
-    }</code></pre>
+}</code></pre>
               </section>
               <section id="example-rust">
                 <pre><code class="language-rust">use actix_rt;
