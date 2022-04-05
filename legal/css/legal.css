@@ -15,7 +15,7 @@ header #logo {
   display: block;
 }
 
-#terms {
+main, #terms {
   margin-top: 30px;
   margin-bottom: 30px;
   padding-left: 80px;
