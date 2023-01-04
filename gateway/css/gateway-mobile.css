@@ -31,6 +31,7 @@
 #download-grid {
   grid-template-columns: none;
   width: calc(100% - 40px);
+  margin: 0;
 }
 
 .download-box {
