@@ -69,3 +69,12 @@ header #wordmark {
 #main-navigation a.selected {
   background-color: #333;
 }
+
+.light-section, .dark-section {
+  padding: 0;
+}
+
+.illustration {
+  padding: 2rem;
+  box-sizing: border-box;;
+}

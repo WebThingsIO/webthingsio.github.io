@@ -19,7 +19,6 @@
   <meta property="og:url" content="https://webthings.io/gateway" />
   <meta property="og:image" content="https://webthings.io/gateway/images/webthings_gateway_banner.png" />
   <script src="/js/site.js"></script>
-  <script src="js/carousel.js"></script>
 </head>
 
   <body>
@@ -41,65 +40,68 @@
     </header>
 
     <main>
-      <section id="intro">
+      <section id="hero">
         <img id="webthings-gateway-wordmark" src="images/webthings_gateway_wordmark.svg" alt="WebThings Gateway" />
-        <div id="carousel">
-          <section id="carousel-section1" class="selected carousel-section">
-            <div class="carousel-screenshot">
-              <img class="carousel-screenshot-image" src="images/things_ui_screenshot.png" alt="Things UI Screenshot" />
-            </div>
-            <div class="carousel-description">
-              <div class="carousel-description-wrapper">
-                <h3 class="carousel-heading">Things UI</h3>
-                <p class="carousel-paragraph">Monitor and control all your smart home devices via a unified web interface.</p>
-              </div>
-            </div>
-          </section>
-          <section id="carousel-section2" class="carousel-section">
-            <div class="carousel-screenshot">
-              <img class="carousel-screenshot-image" src="images/rules_engine_screenshot.png" alt="Rules Engine Screenshot" />
-            </div>
-            <div class="carousel-description">
-              <div class="carousel-description-wrapper">
-                <h3 class="carousel-heading">Rules Engine</h3>
-                <p class="carousel-paragraph">Create "if this then that" style rules to automate your home with a simple drag and drop interface.</p>
-              </div>
-            </div>
-          </section>
-          <section id="carousel-section3" class="carousel-section">
-            <div class="carousel-screenshot">
-              <img class="carousel-screenshot-image" src="images/floorplan_screenshot.png" alt="Floorplan Screenshot" />
-            </div>
-            <div class="carousel-description">
-              <div class="carousel-description-wrapper">
-                <h3 class="carousel-heading">Floorplan</h3>
-                <p class="carousel-paragraph">Lay out all your devices on an interactive floorplan of your home for at-a-glance status and control.</p>
-              </div>
-            </div>
-          </section>
-          <section id="carousel-section4" class="carousel-section">
-            <div class="carousel-screenshot">
-              <img class="carousel-screenshot-image" src="images/addons_screenshot.png" alt="Add-ons Screenshot" />
-            </div>
-            <div class="carousel-description">
-              <div class="carousel-description-wrapper">
-                <h3 class="carousel-heading">Add-ons</h3>
-                <p class="carousel-paragraph">Add compatibility with more devices and protocols with adapter add-ons.</p>
-              </div>
-            </div>
-          </section>
-          <ul id="carousel-tabs">
-            <li><a id="carousel-tab1" href="#carousel-section1" data-section="carousel-section1" class="selected"></a></li>
-            <li><a id="carousel-tab2" href="#carousel-section2" data-section="carousel-section2"></a></li>
-            <li><a id="carousel-tab3" href="#carousel-section3" data-section="carousel-section3"></a></li>
-            <li><a id="carousel-tab4" href="#carousel-section4" data-section="carousel-section4"></a></li>
-          </ul>
+        <p>Host your own private smart home</p>
+        <a class="button" href="#download">Download</a>
+      </section>
+
+      <section id="intro" class="light-section">
+        <p><strong>WebThings Gateway</strong> is a software distribution for smart home hubs focused on privacy, security and interoperability.</p>
+      </section>
+
+      <section class="feature light-section">
+        <div class="illustration">
+          <img src="images/things_ui_screenshot.png" alt="A screenshot of a grid of icons representing devices in a smart home" />
+        </div>
+        <div class="description">
+          <h1>Unified Web Interface</h1>
+          <p>Monitor and control all your smart home devices via a unified web interface.</p>
         </div>
       </section>
 
-      <section id="instructions">
-        <h1>Build Your Own WebThings Gateway</h1>
+      <section class="feature dark-section">
+        <div class="illustration">
+          <img src="images/rules_engine_screenshot.png" alt="A screenshot of a drag and drop interface with inputs and outputs" />
+        </div>
+        <div class="description">
+          <h1>Rules Engine</h1>
+          <p>Create &quot;if this then that&quot; style rules to automate your home with a simple drag and drop interface.</p>
+        </div>
+      </section>
 
+      <section class="feature light-section">
+        <div class="illustration">
+          <img src="images/floorplan_screenshot.png" alt="A screenshot with icons representing devices on a floorplan of a house" />
+        </div>
+        <div class="description">
+          <h1>Floorplan</h1>
+          <p>Lay out all your devices on an interactive floorplan of your home for at-a-glance status and control.</p>
+        </div>
+      </section>
+
+      <section class="feature dark-section">
+        <div class="illustration">
+          <img src="images/logs_screenshot.png" alt="A screenshot of interactive graphs of sensor data over time" />
+        </div>
+        <div class="description">
+          <h1>Logging</h1>
+          <p>Log sensor data over time to identify trends, spot anomalies and make optimisations.</p>
+        </div>
+      </section>
+
+      <section class="feature light-section">
+        <div class="illustration">
+          <img src="images/addons_screenshot.png" alt="A screenshot of a directory of installable add-ons" />
+        </div>
+        <div class="description">
+          <h1>Add-ons</h1>
+          <p>Add compatibility with more devices and protocols with adapter add-ons.</p>
+        </div>
+      </section>
+
+      <section id="download" class="dark-section">
+        <h1>Download</h1>
         <div id="download-grid">
           <section id="pi-download" class="download-box">
             <h2><strong>WebThings</strong> Gateway</h2>
@@ -108,7 +110,7 @@
             <a href="https://github.com/WebThingsIO/gateway/releases/download/1.1.0/gateway-1.1.0.img.zip" class="button">
               Download 1.1
             </a><br />
-            <a href="https://webthings.io/docs/gateway-getting-started-guide.html">Getting Started Guide</a>
+            <a href="https://webthings.io/docs/">Documentation &raquo;</a>
           </section>
 
           <section id="docker-download" class="download-box">
@@ -117,9 +119,15 @@
             <img src="images/docker.svg" alt="Docker"/>
             <a href="https://hub.docker.com/r/webthingsio/gateway" class="button">
               Download 1.1
-            </a>
+            </a><br />
+            <a href="https://webthings.io/docs/">Documentation &raquo;</a>
           </section>
         </div>
+      </section>
+
+      <section id="standards" class="light-section">
+        <p>Built on <a href="https://www.w3.org/WoT/">W3C Web of Things</a> standards.</p>
+        <img src="/images/web_of_things_block_diagram.png" alt="Block diagram showing the Web of Things as an abstraction layer on top of other IoT technologies like Zigbee, Z-Wave and HomeKit">
       </section>
     </main>
 

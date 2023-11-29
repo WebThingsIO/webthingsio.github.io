@@ -112,12 +112,24 @@ h2 {
 
 h3 {
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+  font-size: 18px;  
   font-weight: 600;
 }
 
 section {
   padding: 20px;
+}
+
+.dark-section {
+  background-color: #e6e6e6;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.light-section {
+  background-color: #fff;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 
 .button {
