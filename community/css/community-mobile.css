@@ -1,0 +1,21 @@
+#conversation-mediums {
+  width: 280px;
+  grid-template-columns: 280px;
+}
+
+#contributions {
+  flex-direction: column;
+}
+
+.contribution {
+  margin-bottom: 40px;
+}
+
+.medium {
+  width: 280px;
+}
+
+.medium img {
+  width: 56px;
+  height: 56px;
+}
