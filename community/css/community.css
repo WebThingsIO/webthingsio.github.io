@@ -1,0 +1,137 @@
+#hero {
+  background-image: url('../images/people.jpg');
+  background-size: cover;
+  background-position: center 10%;
+  height: 400px;
+  padding: 0;
+  color: #fff;
+}
+
+#hero p {
+  max-width: 450px;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  margin: 20px;
+  box-sizing: border-box;
+}
+
+.shade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0 ,0, 0.58);
+}
+
+#conversation-mediums {
+  display: grid;
+  width: 700px;
+  grid-template-columns: 350px 350px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#conversation h2 {
+  text-align: center;
+}
+
+.medium {
+  display: flex;
+  flex-direction: row;
+  width: 350px;
+  height: 84px;
+  margin: 25px 0;
+  color: #000;
+  text-decoration: none;
+}
+
+.medium:hover, .medium:active {
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px #666;
+}
+
+.medium img {
+  width: 64px;
+  height: 64px;
+  margin: 10px 20px;
+}
+
+.medium-description {
+  flex: 1;
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.medium h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+.medium p {
+  margin: 0;
+  font-size: 13px;
+}
+
+#get-involved-section {
+  background-color: #5d9bc7;
+  text-align: center;
+  color: #fff;
+}
+
+#contributions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.contribution {
+  width: 300px;
+  margin: 10px;
+}
+
+.contribution img {
+  width: 192px;
+  margin: 10px;
+}
+
+#docs-link {
+  color: #fff;
+}
+
+#newsletter {
+  background-color: #e6e6e6;
+}
+
+#signup-form {
+  text-align: center;
+  padding: 10px 10px;
+}
+
+#signup-form input[type=text], #signup-form input[type=email] {
+  height: 32px;
+  border: none;
+  border-radius: 5px;
+  font-size: 17px;
+  padding: 1px 10px;
+  margin: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+
+#signup-form input[type=submit] {
+  margin-bottom: 5px;
+}
+
+#privacy-link {
+  font-size: 13px;
+  color: #666;
+}
